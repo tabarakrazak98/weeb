@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taba Art</title>
+    <style>
+        body {
+            background-color: #e0f7fa; /* لون خلفية الموقع */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, #ffeb3b, #2196f3); /* خلفية اسم الموقع */
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        section {
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+            position: relative;
+            font-size: 2em;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 5px;
+            background: linear-gradient(to right, #2196f3, #ffeb3b);
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+    
+        body {
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, #ffeb3b, #2196f3);
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        section {
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+            position: relative;
+            font-size: 2em;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 5px;
+            background: linear-gradient(to right, #2196f3, #ffeb3b);
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .art-piece {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .art-piece:hover {
+            transform: translateY(-5px);
+        }
+        .art-piece img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            cursor: pointer;
+            border-bottom: 3px solid #2196f3;
+        }
+        .art-piece p {
+            padding: 15px;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ستايل المودال */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            animation: zoom 0.3s;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.5);}
+            to {transform: scale(1);}
+        }
+
+        @media (max-width: 992px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            .art-piece img {
+                height: 250px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+   
+
+<header>
+    <h1>Taba Art</h1>
+</header>
+
+<section>
+    <h2>اللوحات الأكثر شهرة بالعالم</h2>
+    <div class="gallery">
+        <!-- مثال لصورة -->
+        <div class="art-piece">
+            <img src="صور/image3.jpg.jpg" alt="لوحة مشهورة">
+            <p align="center"> اسم الفنان:  فينسنت فان غوخ<br>تاريخ الرسم: 1889<br> بلد المنشأ: هولندا<br>قصة اللوحة: لوحة نجمة الليل رسمها فان غوخ أثناء 
+                وجوده في مصحَّة نفسية بفرنسا، تعكس رؤيته الثورية للسماء
+                 ليلاً عبر دوامات زرقاء وصفراء متلألئة. تُمزج اللوحة بين الواقع والخيال،
+                 حيث تظهر قرية هادئة تحت سماء دراماتيكية 
+                 مع شجرة سرو طويلة ترمز إلى الروح. تعرضت للتلف 
+                بسبب استخدامه طبقات سميكة 
+                من الألوان الزيتية. تُعتبر اليوم أيقونة لفن الحداثة،
+                 وتعكس صراع الفنان مع اضطراباته النفسية<br>
+             
+                  
+                   </p>
+        </div>
+
+        <div class="art-piece">
+            <img src="صور/image2.jpg.jpeg" alt="لوحة مشهورة">
+            <p align="center"> اسم الفنان: ليوناردو دافينشي <br>تاريخ الرسم: 1495-1498<br>بلد المنشأ: جمهورية فلورنسا<br>قصة اللوحة:  لوحة العشاء الأخير*  
+                رسمها *ليوناردو دا فينشي*  على جدار دير *سانتا ماريا ديليه غراتسي*
+                 في ميلانو.
+                 تُصوِّر اللحظة التي يُعلن فيها المسيح أن أحد تلاميذه سيخونه، معبرًا عن ردود أفعال التلاميذ المُتفاوتة.
+                 
+        اعتمد ليوناردو تقنية تجريبية (مزيج من الزيت والتمبرا) 
+                 أدت إلى تدهورها السريع.
+                  نجت اللوحة من قصف الحرب العالمية الثانية،
+                  ورُممت مرارًا. تُعتبر تحفة فنية دينية رغم حالتها الهشّة،
+                   تجسد ذروة الإبداع الإنساني في تصوير 
+                   العواطف والدراما</p>
+        </div>
+
+
+        <div class="art-piece">
+            <img src="صور/image1.jpeg" alt="لوحة مشهورة">
+            <p align="center">اسم الفنان:   ليوناردو دافينشي<br> تاريخ الرسم: 1503-1519<br>بلد المنشأ:ايطاليا<br>قصة اللوحة: **لوحة الموناليزا*  
+                رسمها *ليوناردو دا فينشي* في عصر النهضة (1503–1519م)، وتصوِّر *ليزا جيرارديني* زوجة تاجر إيطالي. اشتهرت بابتسامتها الغامضة الناتجة عن تقنية *"السفوماتو"* التي تخلق تأثير الضبابية. سُرقت عام 1911 من متحف اللوفر، مما زاد شهرتها عالميًا. تُعتبر اليوم أيقونة فنية عالمية، محفوظة خلف زجاج مضاد للرصاص في اللوفر، وتجسد إبداعًا إنسانيًا خالدًا. .</p>
+        </div>
+
+
+        <div class="art-piece">
+            <img src="صور/image21.jpg" alt="لوحة مشهورة">
+            <p align="center">اسم الفنان:  سلفاردو دالي<br>تاريخ الرسم: 1931<br>بلد المنشأ: اسبانيا<br>قصة اللوحة: لوحة "إصرار الذاكرة" لسلفادور دالي، التي أُنجزت عام 1931، تُصور مشهدًا سرياليًا يتميز بساعات مُذابة تتدلى من الأشجار والأثاث. تعكس اللوحة مفهوم الزمن المرن وتآكله، مما يثير تساؤلات حول الذاكرة والواقع. تُعتبر هذه العمل رمزًا للقلق الوجودي، وتُبرز التجربة الإنسانية في عالم غير ثابت </p>
+        </div>
+
+
+        <div class="art-piece">
+            <img src="صور/image6.jpg" alt="لوحة مشهورة">
+            <p align="center">اسم الفنان:   يوهانس فيرمير،<br>تاريخ الرسم: 1665<br> بلد المنشأ: هولندا<br>قصة اللوحة: لوحة "الفتاة ذات القرط اللؤلؤي" ليوهانس فيرمير، التي أُنجزت في القرن السابع عشر، تُظهر فتاة شابة ترتدي قرطًا لؤلؤيًا كبيرًا. تُعتبر هذه اللوحة تجسيدًا للجمال والبراءة، حيث يبرز تعبير وجه الفتاة وملامحها النقية. تُعرف أيضًا باسم "الموناليزا الشمالية" بسبب الغموض الذي يكتنف نظرتها، مما يجعلها واحدة من أبرز الأعمال الفنية في التاريخ</p>
+        </div>
+   
+         
+        <div class="art-piece">
+            <img src="صور/image20.jpg" alt="لوحة مشهورة">
+            <p align="center">اسم الفنان:     ادفارت مونك<br>تاريخ الرسم:1893<br>بلد المنشأ:النرويج<br> قصة اللوحة:- لوحة "الصرخة" لإدفارت مونك، التي أُنجزت عام 1893، تعكس شعورًا عميقًا بالقلق والاضطراب. تُظهر شخصية بشرية تصرخ في مشهد طبيعي مع سماء ملونة، مما يُعبر عن مشاعر الوحدة والخوف من الوجود. تُعتبر هذه اللوحة رمزًا للحياة الحديثة، وتُبرز التوترات النفسية التي عاشها الإنسان في عصرها  </p>      </div>
+    </div>
+
+
+    <!-- أضف المزيد من الصور هنا -->
+</section>
+
+<section>
+    <h2>اللوحات الأغلى مبيعاً</h2>
+    <div class="gallery">
+        <!-- مثال لصورة -->
+           <!-- مثال لصورة -->
+           <div class="art-piece">
+            <img src="صور/image7.jpg.jpeg" alt="لوحة أغلى">
+            <p align="center">اسم الفنان: بول سيزان <br> سعر اللوحة : 250 مليون دولار <br> المشتري : لوحة لاعبو الورق
+                 بيعت سنة 2011 اشترتها العائلة المالكة في قطر    
+                   تصوراللوحة مزارعين يلعبون
+                 الورق بهدوء تعكس الاسلوب التكعيبي المبكر وتعتبر رمزاً لفن ما بعد الانطباعية </p>
+        </div>
+               <!-- مثال لصورة -->
+               <div class="art-piece">
+                <img src="صور/image9.jpg" alt="لوحة أغلى">
+                <p align="center">اسم الفنان:  ليوناردو دافينشي <br> سعر اللوحة : 450.3 مليون دولار <br> المشتري : لوحة سالفاتور دافينشي اشتراها محمد بن سلمان ال سعود  بيعت سنة 2017 </p>
+            </div>
+        <div class="art-piece">
+            <img src="صور/image8.jpg" alt="لوحة أغلى">
+            <p align="center">اسم الفنان: ويليام دي كوننغ <br> سعر اللوحة : 500 مليون دولار <br>  المشتري :لوحة التبادل بيعت سنة 2015 
+                اشتراها الملياردير 
+                كينيث غريفين في صفقة 
+                خاصة تعكس اللوحة
+                 تأثير نييورك على دي كوننغ </p>
+        </div>
+    
+       
+
+            
+         
+
+                          <!-- مثال لصورة -->
+                          <div class="art-piece">
+                            <img src="صور/image22.jfif" alt="لوحة أغلى">
+                            <p align="center">اسم الفنان:   غوستاف كليمت <br> سعر اللوحة : 135 مليون دولار <br>  المشتري :  لوحة امرأة في الذهب بيعت سنة 2006 اشتراها رونالد لودر لمتحف نيويورك وهي لوحة زخرفية شهيرة تعكس الفن الانفصالي النمساوي   </p>
+                       </div>
+
+
+                    
+                        <!-- مثال لصورة -->
+                        <div class="art-piece">
+                            <img src="صور/image11.jpg" alt="لوحة أغلى">
+                            <p align="center">اسم الفنان: بابلو بيكاسو <br> سعر اللوحة : 104 مليون دولار <br>  المشتري : لوحة الفتي والغليون من اللوحات النابضة بالحياة وتصور صبياً باريسياً يمسك بغليون في يده اليسرى وعلى رأسه اكليل من الورورد بيعت في صالة للمزادات  </p>
+                       </div>
+                         
+                        <div class="art-piece">
+                            <img src="صور/image10.jpg" alt="لوحة أغلى">
+                            <p align="center">اسم الفنان: بول  غوغان <br> سعر اللوحة : 210 مليون دولار <br>  المشتري : لوحة متى تتزوجين بيعت
+                                 سنة  2015 اشترتها
+                                 دولة قطر من عائلة سويسرية
+                                 تصور اللوحة امرأتين 
+                                 محليتين بألوان استوائية </p>
+                        </div>
+                
+           </div>
+</section>
+
+<section>
+    <h2>اللوحات التراجيدية الأكثر شهرة</h2>
+    <div class="gallery">
+        <!-- مثال لصورة -->
+        <div class="art-piece">
+            <img src="صور/image77.jfif" alt="لوحة تراجيدية">
+            <p align="center">اسم الفنان:  هانز ادولف بوهلر<br>  قصة اللوحة:  لوحة العودة الى الديار والتي يصور فيه  جندياً عائداً
+                 من الحرب وقد ألقى برأسه المتعب في حضن حبيبته
+                 التي تمثل في هذه اللوحة البيت والوطن والام</p>
+        </div>
+
+       
+            <!-- مثال لصورة -->
+            <div class="art-piece">
+                <img src="صور/image26.jfif" alt="لوحة أغلى">
+                <p align="center">اسم الفنان: بابلو بيكاسو <br>قصة اللوحة:  لوحة لاعب الغيتار المسن 
+                    حجزت لنفسها مقعداً وثيراً في قوائم اشهر اللوخات في التاريخ منذ عرضها  للجمهور للمرة الاولى تنتمي لما يعرف بـ" الفترة الزرقاء" وهي الفترة التي اعقبت انتحار صديق بيكاسو</p>
+           </div>
+
+           
+                <!-- مثال لصورة -->
+                <div class="art-piece">
+                    <img src="صور/image36.jfif" alt="لوحة أغلى">
+                    <p align="center">اسم الفنان: برونو اماديو<br>قصة اللوحة: لوحة الطفل االباكي هو عمل فني شهير يظهر طفلاً بملامح حزينة ودموع على خديه
+                     </p>
+                </div>
+
+                
+                    <!-- مثال لصورة -->
+                    <div class="art-piece">
+                   
+                        <img src="صور/image46.jfif" alt="لوحة أغلى">
+                        <p align="center">اسم الفنان:  جان فرانسوا ميلي<br>قصة اللوحة:  لوحة الراعية تظهر  فتاة شابة تحمل الخسارة في عينيها مع خلفية من المناظلر الطبيعية الهادئة تعكس مشاعر الوحدة والحسرة</p>
+                    </div>
+            
+                        <!-- مثال لصورة -->
+                        <div class="art-piece">
+                       
+                            <img src="صور/image56.jfif" alt="لوحة أغلى">
+                            <p align="center">اسم الفنان:  بابلو بيكاسو<br> قصة اللوحة:  المرأة الباكية تعكس اللوحة الالم الناتج عن الحرب الاهلية الاسبانية
+                                وقد اثارت الجدل بسبب تصويرها الحاد للمشاعر الانسانية المأساوية </p>
+                        </div>
+
+                        
+                            <!-- مثال لصورة -->
+                            <div class="art-piece">
+                            
+                                <img src="صور/image66.jfif" alt="لوحة أغلى">
+                                <p align=" center">اسم الفنان: بيراوغوست رينور<br> قصة اللوحة: تظهر اللوحة فتاتين تجلسان على شرفة تطل على نهر السين وتمثلان البراءة والهدوء في لحظة من الزمن رغم ان عنوان اللوحة يوحي انهما شقيقتان الا ان العارضتين لم تكن كذلك فعلياً .</p>
+                            </div>
+        <!-- أضف المزيد من الصور هنا -->
+    </div>
+</section>
+<section>
+    <h2>اللوحات المحاكية لمشاعر الانسان الأكثر شهرة</h2>
+    <div class="gallery">
+        <!-- مثال لصورة -->
+        <div class="art-piece">
+            <img src="صور/image16.jfif" alt="لوحة تراجيدية">
+            <p align="center">اسم الفنان:  كاميل بيسارو <br> المشاعر: غضب وعزلة<br> قصة اللوحة: لوحة الاسير تظهر الشخصية المعزولة التي تعبر عن مشاعر  الغضب تجاه الظروف المعيشية</p>
+        </div>
+
+       
+            <!-- مثال لصورة -->
+            <div class="art-piece">
+                <img src="صور/image96.jfif" alt="لوحة أغلى">
+                <p align="center">اسم الفنان: فان غوخ  <br>  المشاعر :غضب وتمرد <br>قصة اللوحة: تظهر مشاهد من الثورة مع تعبيرات  وجوه المجاهدين التي تعكس الغضب والرغبة في التغيير</p>
+            </div>
+
+          
+                <!-- مثال لصورة -->
+                <div class="art-piece">
+                    <img src="صور/image13.jpg" alt="لوحة أغلى">
+                    <p align="center">اسم الفنان:  فان غوخ<br> المشاعر :حزن<br> قصة اللوحة: تعبر عن الالم الداخلي لفان غوخ حيث تظهر الالوان الداكنة
+                         والتجاعيد على وجه الشخصية</p>
+                </div>
+
+                
+                    <!-- مثال لصورة -->
+                    <div class="art-piece">
+                        <img src="صور/image80.jpg" alt="لوحة أغلى">
+                        <p align="center">اسم الفنان:  بابلو بيكاسو<br>المشاعر : حزن عميق, وحدة وكآبة
+                            <br>قصة اللوحة:  لوحة المأساة وهي من فترة اللون الازرق التي كانت تتميز باللون الازرق الكئيب والمشاعر الحزينة الفتر الزرقاء كانت تعبر عن الحزن
+                        
+                 , الفقر , المعاناة وغالباً ما كان يرسم اشخاصاً يعانون من الوحدة او الفقد
+                        </p>
+                    </div>
+        
+                        <!-- مثال لصورة -->
+                        <div class="art-piece">
+                            <img src="صور/image81.jpg" alt="لوحة أغلى">
+                            <p align="center">اسم الفنان:  ايليا ريبين<br>المشاعر : الندم
+                                <br>قصة اللوحة:  لوحة ايفان الرهيب وابنه ايفان تظهر لحظة
+                                 مأساوية بعد ان قتل القيصر
+                                 ابنه في نوبة غضب تصور اللوحة القيصر وهو يحتضن ابنه المحتضر بوجه مصدوم وملامح ندم عميقة مما يعكس العلم والجنون اثارت اللوحة جدلاً 
+                                 واسعاً في روسيا حيث انه منعت لفترة بسبب طبيعتها السياسية والنفسية القوية </p>
+                        </div>
+
+
+                            <!-- مثال لصورة -->
+                            <div class="art-piece">
+                                <img src="صور/image82.jpg" alt="لوحة ">
+                                <p align="center">  اسم الفنان:كاميل بيسارو<br> المشاعر: فرح <br> قصة اللوحة : لوحة الرقص في الحديقة تعكس لحظات من
+                                    
+                                السعادة والاحتفال حيث يظهر 
+                                    الناس وهو يستمتعون بالطبيعة 
+                                    والموسيقى </p> 
+                            </div>
+        <!-- أضف المزيد من الصور هنا -->
+<!-- نافذة المودال -->
+<div class="modal-overlay" id="modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-img">
+</div>
+
+<script>
+    // فتح الصورة
+    function openModal(imgSrc) {
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        modal.style.display = 'flex';
+        modalImg.src = imgSrc;
+    }
+
+    // إغلاق المودال
+    function closeModal() {
+        document.getElementById('modal').style.display = 'none';
+    }
+
+    // إغلاق بالنقر خارج الصورة
+    window.onclick = function(event) {
+        const modal = document.getElementById('modal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // إضافة الأحداث للصور
+    document.querySelectorAll('.art-piece img').forEach(img => {
+        img.addEventListener('click', () => openModal(img.src));
+    });
+</script>
+
+        
+    </div>
+</section>
+
+</body>
+</html>
